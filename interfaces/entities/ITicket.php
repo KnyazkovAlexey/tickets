@@ -18,7 +18,7 @@ interface ITicket
     public function getOrder(): IOrder;
 
     /**
-     * @return float
+     * @return float|null
      */
-    public function getPaidPrice(): float;
+    public function getPaidPrice(): ?float;
 }

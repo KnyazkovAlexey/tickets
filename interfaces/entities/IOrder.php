@@ -13,7 +13,7 @@ interface IOrder
     public function getUser(): IUser;
 
     /**
-     * @return bool
+     * @return int|null
      */
-    public function isPaid(): bool;
+    public function getPaidAt(): ?int;
 }
