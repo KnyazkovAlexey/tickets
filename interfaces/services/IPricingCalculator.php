@@ -15,7 +15,6 @@ interface IPricingCalculator
 {
     /**
      * Get a whole event price.
-     * We can use some pricing config for it or just constants.
      *
      * @param IEvent $event
      * @return float
