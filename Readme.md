@@ -6,28 +6,23 @@
 
 1). Логин юзера:
 POST /api/v1/login
-Content-Type: application/json
-
 {"login" : "Max2000", "password" : "12345"}
 
 2). Просмотр заказов юзера:
-GET /api/v1/user/order
+GET /api/v1/user/{id}/order
 
-3). Рассчет стоимости заказа:
-POST /api/v1/order/calc-price
-Content-Type: application/json
+3). Получение доступных мероприятий:
+GET /api/v1/event
 
-{"event_id" : 1, "event_parts_ids" : [1, 2, 3]}
+4). Рассчет стоимости билета:
+POST /api/v1/ticket/calc-price
+{"event_id": 1, "event_parts_ids" : [1, 2, 3]}
 
-4). Создание заказа:
+5). Создание заказа:
 POST /api/v1/order
-Content-Type: application/json
+{"events" : [{"id": 1, "event_parts_ids" : [1, 2, 3]}]}
 
-{"event_id" : 1, "event_parts_ids" : [1, 2, 3]}
-
-5). Веб-хук об успешной оплате заказа:
+6). Веб-хук об успешной оплате заказа:
 POST /api/v1/payment/{id}/ok
-Content-Type: application/json
-
 {"secret" : "xxx"}
 </pre>
