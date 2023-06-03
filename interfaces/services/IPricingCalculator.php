@@ -4,7 +4,6 @@ namespace app\interfaces\services;
 
 use app\interfaces\entities\IEvent;
 use app\interfaces\entities\IEventPart;
-use app\interfaces\entities\ITicket;
 
 /**
  * This calculator knows the price of every event and part.
@@ -32,10 +31,11 @@ interface IPricingCalculator
     /**
      * All magic is here (discounts for odd lectures, ...).
      *
-     * @param ITicket $ticket
+     * @param IEvent $event
+     * @param IEventPart[] $eventParts
      * @return float
      */
-    public function calcTicketPrice(ITicket $ticket): float;
+    public function calcPrice(IEvent $event, array $eventParts): float;
 }
 
 
