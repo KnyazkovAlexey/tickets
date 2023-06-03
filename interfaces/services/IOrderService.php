@@ -17,9 +17,9 @@ interface IOrderService
     public function getQrGenerator(): IQrGenerator;
 
     /**
-     * Calculate the preliminary order price before order creation:
+     * Calculate a preliminary price before an order creation:
      * 1). Get selected events and their selected parts;
-     * 2). Get the price for every event (using getPricingCalculator).
+     * 2). Calculate the price of every event (using getPricingCalculator).
      *
      * @param IOrderForm $orderForm
      * @return float
