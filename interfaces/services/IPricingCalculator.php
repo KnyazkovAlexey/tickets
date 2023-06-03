@@ -31,11 +31,10 @@ interface IPricingCalculator
     /**
      * All magic is here (discounts for odd lectures, ...).
      *
-     * @param IEvent $event
      * @param IEventPart[] $eventParts
      * @return float
      */
-    public function calcPrice(IEvent $event, array $eventParts): float;
+    public function calcPartialEventPrice(array $eventParts): float;
 }
 
 
