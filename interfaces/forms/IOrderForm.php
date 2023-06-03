@@ -6,7 +6,7 @@ use app\interfaces\entities\IEvent;
 use app\interfaces\entities\IEventPart;
 
 /**
- * Order creation/editing form
+ * An order creation/editing form with events and parts
  */
 interface IOrderForm
 {

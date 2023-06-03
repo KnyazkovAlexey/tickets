@@ -3,7 +3,7 @@
 namespace app\interfaces\entities;
 
 /**
- * An user's order. Can include one or more tickets.
+ * An user's order. Can include one or more tickets
  */
 interface IOrder
 {

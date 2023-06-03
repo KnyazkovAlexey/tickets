@@ -3,7 +3,7 @@
 namespace app\interfaces\entities;
 
 /**
- * A ticket for an event.
+ * A ticket for an event
  */
 interface ITicket
 {

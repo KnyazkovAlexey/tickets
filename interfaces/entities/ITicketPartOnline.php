@@ -3,7 +3,7 @@
 namespace app\interfaces\entities;
 
 /**
- * A ticket position for an order that includes offline event parts
+ * A ticket position for an online partial event
  */
 interface ITicketPartOnline extends ITicketPart
 {
