@@ -15,14 +15,21 @@ interface ITicketService
     public function getQrGenerator(): IQrGenerator;
 
     /**
-     * 1). Create a ticket;
-     * 2). Generate QRs or links.
+     * Create an unpaid ticket without QRs or links
      *
      * @param IEvent $event
      * @param IEventPart[]|null $eventParts
      * @return ITicket
      */
     public function createTicket(IEvent $event, array $eventParts = null): ITicket;
+
+    /**
+     * Set required QRs or links
+     *
+     * @param ITicket $ticket
+     * @return bool
+     */
+    public function onTicketPaid(ITicket $ticket): bool;
 }
 
 

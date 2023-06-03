@@ -15,10 +15,9 @@ interface IOrderService
     public function getTicketService(): ITicketService;
 
     /**
-     * Create an unpaid order:
-     * 1). Create an order;
+     * 1). Create an unpaid order;
      * 2). Calculate prices (using getPricingCalculator);
-     * 2). Create tickets (using getTicketService).
+     * 3). Create tickets (using getTicketService).
      *
      * @param IUser $user
      * @param IOrderForm $orderForm
@@ -27,7 +26,9 @@ interface IOrderService
     public function createOrder(IUser $user, IOrderForm $orderForm): IOrder;
 
     /**
-     * Handle a successful order payment (set paid_at)
+     * Handle a successful order payment:
+     * 1). Set paid_at;
+     * 2). Set QRs or links for every ticket (using getTicketService).
      *
      * @param IOrder $order
      * @return bool
