@@ -13,7 +13,7 @@ POST /api/v1/login
 2). Просмотр заказов юзера:
 GET /api/v1/user/{id}/order
 
-Ответ: {"orders": [{"id": 1, "paid_at": "2023-01-01 00:00:00", "tickets": [{"id": 1, "is_online": true, "price": 1000.00, "event": {"id": 1, "type": "conference", "name": "IT 2020 Dubai", "event_parts": []}}]}]}
+Ответ: {"orders": [{"id": 1, "paid_at": "2023-01-01 00:00:00", "tickets": [{"id": 1, "is_online": true, "price": 1000.00, "event": {"id": 1, "type": "conference", "name": "IT 2020 Dubai"}, "event_parts": []}]}]}
 
 3). Получение доступных мероприятий:
 GET /api/v1/event
