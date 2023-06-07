@@ -7,17 +7,19 @@ use app\interfaces\entities\IUser;
 use app\interfaces\forms\IOrderForm;
 
 /**
- * We handle orders with this service
+ * We handle orders with this service.
+ * It uses external services (getPricingCalculator, ...) for non-core tasks.
  */
 interface IOrderService
 {
     public function getPricingCalculator(): IPricingCalculator;
-    public function getTicketService(): ITicketService;
+    public function getLinkGenerator(): ILinkGenerator;
+    public function getQrGenerator(): IQrGenerator;
 
     /**
      * 1). Create an unpaid order;
      * 2). Calculate prices (using getPricingCalculator);
-     * 3). Create tickets (using getTicketService).
+     * 3). Create tickets.
      *
      * @param IUser $user
      * @param IOrderForm $orderForm
@@ -28,7 +30,7 @@ interface IOrderService
     /**
      * Handle a successful order payment:
      * 1). Set paid_at;
-     * 2). Set QRs or links for every ticket (using getTicketService).
+     * 2). Set QRs or links for every ticket.
      *
      * @param IOrder $order
      * @return bool

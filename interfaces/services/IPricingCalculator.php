@@ -2,39 +2,40 @@
 
 namespace app\interfaces\services;
 
-use app\interfaces\entities\IEvent;
-use app\interfaces\entities\IEventPart;
+use app\interfaces\entities\ITicket;
+use app\interfaces\entities\ITicketPart;
 
 /**
- * This calculator knows the price of every event and part.
+ * This calculator knows the price of every ticket and part.
  * Decided not to keep prices in the DB, because the ticket logic is still here.
  * We can use some pricing config or just constants.
  */
 interface IPricingCalculator
 {
     /**
-     * Get a whole event price.
+     * Get a whole ticket price.
      *
-     * @param IEvent $event
+     * @param ITicket $ticket
      * @return float
      */
-    public function getEventPrice(IEvent $event): float;
+    public function getTicketPrice(ITicket $ticket): float;
 
     /**
-     * Get a default price of an event part (lecture, ...).
+     * Get a default price of an ticket part (lecture, ...).
      *
-     * @param IEventPart $eventPart
+     * @param ITicketPart $ticketPart
      * @return float
      */
-    public function getEventPartPrice(IEventPart $eventPart): float;
+    public function getTicketPartPrice(ITicketPart $ticketPart): float;
 
     /**
      * All magic is here (discounts for odd lectures, ...).
      *
-     * @param IEventPart[] $selectedParts
+     * @param ITicket $ticket
+     * @param ITicketPart[]|null $selectedParts
      * @return float
      */
-    public function calcPartialEventPrice(array $selectedParts): float;
+    public function calcPartialEventPrice(ITicket $ticket, array $selectedParts = null): float;
 }
 
 

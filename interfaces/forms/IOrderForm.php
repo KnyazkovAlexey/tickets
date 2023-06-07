@@ -2,22 +2,15 @@
 
 namespace app\interfaces\forms;
 
-use app\interfaces\entities\IEvent;
-use app\interfaces\entities\IEventPart;
+use app\interfaces\entities\ITicket;
 
 /**
- * An order creation/editing form with events and parts
+ * An order creation/editing form
  */
 interface IOrderForm
 {
     /**
-     * @return IEvent[]
+     * @return ITicket[]
      */
-    public function getSelectedEvents(): array;
-
-    /**
-     * @param IEvent $selectedEvent
-     * @return IEventPart[]
-     */
-    public function getSelectedEventParts(IEvent $selectedEvent): array;
+    public function getTickets(): array;
 }
