@@ -2,8 +2,8 @@
 
 namespace app\interfaces\services;
 
-use app\interfaces\entities\ITicketOnline;
-use app\interfaces\entities\ITicketPartOnline;
+use app\interfaces\entities\ITicket;
+use app\interfaces\entities\ITicketPart;
 
 /**
  * Generates links for online tickets
@@ -11,14 +11,14 @@ use app\interfaces\entities\ITicketPartOnline;
 interface ILinkGenerator
 {
     /**
-     * @param ITicketOnline $ticket
+     * @param ITicket $ticket
      * @return string An url
      */
-    public function generateTicketLink(ITicketOnline $ticket): string;
+    public function generateTicketLink(ITicket $ticket): string;
 
     /**
-     * @param ITicketPartOnline $ticketPart
+     * @param ITicketPart $ticketPart
      * @return string An url
      */
-    public function generateTicketPartLink(ITicketPartOnline $ticketPart): string;
+    public function generateTicketPartLink(ITicketPart $ticketPart): string;
 }

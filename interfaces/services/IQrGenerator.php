@@ -2,8 +2,8 @@
 
 namespace app\interfaces\services;
 
-use app\interfaces\entities\ITicketOffline;
-use app\interfaces\entities\ITicketPartOffline;
+use app\interfaces\entities\ITicket;
+use app\interfaces\entities\ITicketPart;
 
 /**
  * Generates QR-codes for offline tickets
@@ -11,14 +11,14 @@ use app\interfaces\entities\ITicketPartOffline;
 interface IQrGenerator
 {
     /**
-     * @param ITicketOffline $ticket
+     * @param ITicket $ticket
      * @return string An image path
      */
-    public function generateTicketQr(ITicketOffline $ticket): string;
+    public function generateTicketQr(ITicket $ticket): string;
 
     /**
-     * @param ITicketPartOffline $ticketPart
+     * @param ITicketPart $ticketPart
      * @return string An image path
      */
-    public function generateTicketPartQr(ITicketPartOffline $ticketPart): string;
+    public function generateTicketPartQr(ITicketPart $ticketPart): string;
 }

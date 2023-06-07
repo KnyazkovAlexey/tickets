@@ -3,9 +3,9 @@
 namespace app\interfaces\entities;
 
 /**
- * A ticket position for an online partial event
+ * A ticket (or a ticket part) for an online event
  */
-interface ITicketPartOnline extends ITicketPart
+interface IPassOnline extends ITicket
 {
     /**
      * @return string

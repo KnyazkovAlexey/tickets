@@ -21,4 +21,9 @@ interface ITicket
      * @return float
      */
     public function getPrice(): float;
+
+    /**
+     * @return bool
+     */
+    public function isOnline(): bool;
 }
